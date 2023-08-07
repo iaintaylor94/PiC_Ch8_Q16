@@ -33,14 +33,13 @@ void getNumberAndBase (void) {
   scanf ("%ld", &gNumberToConvert);
 
   // Get base
+  do {
   printf ("Base? ");
   scanf ("%d", &gBase);
-
-  // Check base is between 2 and 16
-  if (gBase < 2 || gBase > 16) {
-    printf ("Bad base - must be between 2 and 16\n"); 
-    gBase = 10;
-  }
+    if (gBase < 2 || gBase > 16) {
+      printf ("Bad base - must be between 2 and 16\n"); 
+    }
+  } while (gBase < 2 || gBase > 16);
 }
 
 void convertNumber (void) {
